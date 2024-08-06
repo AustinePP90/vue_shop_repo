@@ -1,12 +1,10 @@
 <template>
-  <div class="">
-    <footer class="mt-5 py-5 bg-dark text-white">&copy; 2024</footer>
-  </div>
+  <div class="">ProductDetail</div>
 </template>
 
 <script>
 export default {
-  name: "FooterArea",
+  name: "ProductDetail",
   props: {
     // 문자열 타입의 prop 예시
     //sampleString: {
