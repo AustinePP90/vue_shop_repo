@@ -1,5 +1,5 @@
 <template>
-  <div class="">ImageInsert</div>
+  <div class=""><!-- 내용을 추가하세요 -->ImageInsert</div>
 </template>
 
 <script>

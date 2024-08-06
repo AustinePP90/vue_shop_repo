@@ -1,5 +1,5 @@
 <template>
-  <div class="">ProductUpdate</div>
+  <div class=""><!-- 내용을 추가하세요 -->ProductUpdate</div>
 </template>
 
 <script>

@@ -1,38 +1,94 @@
 <template>
-  <div class="">ProductCreate</div>
+  <div class="container mt-4">
+    <h1 class="mb-4">상품 등록하기</h1>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">상품명:</label>
+        <input
+          type="text"
+          class="form-control"
+          v-model="newProduct.product_name"
+          id="name"
+          placeholder="상품명을 입력하세요"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">가격:</label>
+        <input
+          type="text"
+          class="form-control"
+          v-model="newProduct.product_price"
+          id="price"
+          placeholder="가격을 입력하세요"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="path" class="form-label">이미지:</label>
+        <input
+          type="text"
+          class="form-control"
+          v-model="newProduct.path"
+          id="path"
+          placeholder="이미지 경로를 입력하세요"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="category1" class="form-label">카테고리1:</label>
+        <select
+          v-model="newProduct.category1"
+          id="category1"
+          class="form-select"
+        >
+          <option value="">선택하세요</option>
+          <option value="전자기기">전자기기</option>
+          <option value="액세서리">액세서리</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="category2" class="form-label">카테고리2:</label>
+        <select
+          v-model="newProduct.category2"
+          id="category2"
+          class="form-select"
+        >
+          <option value="">선택하세요</option>
+          <option value="노트북">노트북</option>
+          <option value="모니터">모니터</option>
+          <option value="PC용품">PC용품</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="category3" class="form-label">카테고리3:</label>
+        <select
+          v-model="newProduct.category3"
+          id="category3"
+          class="form-select"
+        >
+          <option value="">선택하세요</option>
+          <option value="게이밍">게이밍</option>
+          <option value="무선">무선</option>
+        </select>
+      </div>
+      <button type="text" class="btn btn-primary" @click="addGood">
+        상품 등록
+      </button>
+    </form>
+  </div>
 </template>
 
 <script>
 export default {
   name: "ProductCreate",
-  props: {
-    // 문자열 타입의 prop 예시
-    //sampleString: {
-    //  type: String,
-    //  default: ''
-    //},
-    // 숫자 타입의 prop 예시
-    //sampleNumber: {
-    //  type: Number,
-    //  default: 0
-    //},
-    // 배열 타입의 prop 예시
-    //sampleArray: {
-    //  type: Array,
-    //  default: () => []
-    //},
-    // 객체 타입의 prop 예시
-    //sampleObject: {
-    //  type: Object,
-    //  default: () => ({})
-    //}
-  },
-  components: {
-    // 추가적으로 사용할 컴포넌트들을 등록합니다.
-  },
   data() {
     return {
-      // 컴포넌트의 데이터를 초기화합니다.
+      newProduct: {
+        product_name: "",
+        product_price: 0,
+        path: "none.jpg",
+        category1: "",
+        category2: "",
+        category3: "",
+      },
     };
   },
   watch: {
@@ -48,10 +104,10 @@ export default {
     // 필요한 계산된 속성을 정의합니다.
   },
   methods: {
-    // sample3() {
-    //   return '';
-    // }
-    // 컴포넌트에서 사용할 메서드를 정의합니다.
+    addGood() {
+      this.$store.commit("addProduct", this.newProduct);
+      this.$router.push("/sales");
+    },
   },
   setup() {
     // Vue 3 Composition API의 setup 함수에서 추가적인 로직을 처리할 수 있습니다.
