@@ -1,7 +1,5 @@
 <template>
-  <div class="">
-    <footer class="mt-5 py-5 bg-dark text-white">&copy; 2024</footer>
-  </div>
+  <div class="">FooterArea</div>
 </template>
 
 <script>
